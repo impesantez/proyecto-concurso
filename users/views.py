@@ -5,3 +5,7 @@ class CustomLoginView(LoginView):
     template_name = 'login.html'
     redirect_authenticated_user = True
 
+
+def login_view(request):
+    return render(request, 'login.html')
+
