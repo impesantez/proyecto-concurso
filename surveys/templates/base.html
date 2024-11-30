@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Encuesta de Consumo Eléctrico{% endblock %}</title>
+    
+    <!-- Cargar archivo CSS -->
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+
+    <!-- Fuentes (Google Fonts para mejorar la tipografía) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="#">Consejos de Ahorro Energético</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contenido principal -->
+    <main>
+        <div class="container">
+            <h1>Bienvenido a la Encuesta de Consumo Eléctrico</h1>
+            <p>¡Nos gustaría conocer más sobre tu consumo de electricidad! Haz clic en el botón para comenzar la encuesta.</p>
+            
+            <!-- Botón para acceder a la encuesta -->
+            <a href="{% url 'survey' %}" class="btn btn-primary">Ir a la Encuesta</a>
+        </div>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Encuesta de Consumo Eléctrico | Todos los derechos reservados.</p>
+            <p>¿Tienes dudas sobre cómo reducir tu consumo eléctrico? <a href="#">Consulta nuestros consejos</a></p>
+        </div>
+    </footer>
+
+    <!-- Scripts (si es necesario agregar alguno) -->
+    {% block scripts %}
+    <!-- Aquí puedes incluir scripts adicionales si es necesario -->
+    {% endblock %}
+</body>
+</html>

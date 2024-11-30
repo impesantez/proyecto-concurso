@@ -25,3 +25,7 @@ urlpatterns = [
     path("", views.index, name="index"),
     path("login/", views.CustomLoginView.as_view(), name='login'),
 ]
+
+urlpatterns = [
+    path('survey/', views.survey_view, name='survey'),
+]
