@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.hashers import make_password
 from .models import User
+from django.contrib.auth.views import LoginView
+from django.contrib.auth.decorators import login_required
 
 def signup(request):
     if request.method == 'POST':
@@ -38,3 +40,6 @@ def signup(request):
             return render(request, 'signup.html')
 
     return render(request, 'signup.html')
+
+class CustomLoginView(LoginView):
+    template_name = 'login.html'
