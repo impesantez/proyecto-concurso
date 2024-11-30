@@ -19,11 +19,25 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           {% if user.is_authenticated %}
+<<<<<<< HEAD
           <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Cerrar Sesión</a></li>
           <a href="{% url 'your_app_name:logout' %}" class="btn btn-danger">Logout</a>
           {% else %}
           <li class="nav-item"><a class="nav-link" href="{% url "user:login" %}">Iniciar Sesión</a></li>
           <li class="nav-item"><a class="nav-link" href="">Registrarse</a></li>
+=======
+          <li class="nav-item">
+            <form method="post" action="{% url 'logout' %}" style="display: inline;">
+              {% csrf_token %}
+              <button type="submit" class="nav-link btn btn-link" style="padding: 0;margin:0; background: none; border: none; color: inherit; text-decoration: inherit;">
+                Cerrar Sesión
+              </button>
+            </form>
+          </li>
+          {% else %}
+          <li class="nav-item"><a class="nav-link" href="{% url 'users:login' %}">Iniciar Sesión</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'users:signup' %}">Registrarse</a></li>
+>>>>>>> 7d6d120d57eb4d6e06a4c0fbb08673ad8ba3070c
           {% endif %}
         </ul>
       </div>
