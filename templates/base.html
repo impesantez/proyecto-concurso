@@ -19,9 +19,10 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           {% if user.is_authenticated %}
-          <li class="nav-item"><a class="nav-link" href="{% url 'users:logout' %}">Cerrar Sesión</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Cerrar Sesión</a></li>
+          <a href="{% url 'your_app_name:logout' %}" class="btn btn-danger">Logout</a>
           {% else %}
-          <li class="nav-item"><a class="nav-link" href="{% url 'users:login' %}">Iniciar Sesión</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url "user:login" %}">Iniciar Sesión</a></li>
           <li class="nav-item"><a class="nav-link" href="">Registrarse</a></li>
           {% endif %}
         </ul>
