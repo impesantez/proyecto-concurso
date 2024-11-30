@@ -6,7 +6,7 @@ def survey_view(request):
         form = ElectricitySurveyForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('survey_thanks')  # Define esta URL para un mensaje de agradecimiento
+            return redirect('survey_thanks')
     else:
         form = ElectricitySurveyForm()
     return render(request, 'survey.html', {'form': form})
