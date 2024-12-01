@@ -9,10 +9,9 @@
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #cc0c0c;">
     <div class="container-fluid">
-      <a class="navbar-brand" href="{% url 'electricity:index' %}"></a>
+      <a class="navbar-brand" href="{% url 'electricity:index' %}">Carbon Calculator</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -20,9 +19,9 @@
         <ul class="navbar-nav ms-auto">
           {% if user.is_authenticated %}
           <li class="nav-item">
-            <form method="post" action="{% url 'users:logout' %}" style="display: inline;">
+            <form method="post" action="{% url 'users:logout' %}" class="d-inline">
               {% csrf_token %}
-              <button type="submit" class="nav-link btn btn-link" style="padding: 0;margin:0; background: none; border: none; color: inherit; text-decoration: inherit;">
+              <button type="submit" class="nav-link btn btn-link p-0 m-0 text-decoration-none text-light">
                 Cerrar Sesión
               </button>
             </form>
@@ -36,7 +35,6 @@
     </div>
   </nav>
 
-  <!-- Flash messages -->
   {% if messages %}
     <div class="container mt-3">
       {% for message in messages %}
@@ -48,10 +46,8 @@
     </div>
   {% endif %}
 
-    {% block content %}
-    {% endblock content %}
+  {% block content %}{% endblock content %}
 
-  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-HzoJNxHh9GKqxxayXNOReI4vwBJcZ2d1WosDJGQns/E1PS93INgyR9V4Sg8kFUmK" crossorigin="anonymous"></script>
   <footer class="bg-dark text-light text-center py-3">
     <p class="mb-0">&copy; 2024 Carbon Calculator. Todos los derechos reservados</p>
