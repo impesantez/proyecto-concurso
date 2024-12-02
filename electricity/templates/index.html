@@ -1,71 +1,37 @@
-{% extends "base.html" %}
-{% load static %}
+{% extends 'base.html' %}
 
-{% block title %}Registrarse{% endblock title %}
+{% block title %}Inicio{% endblock %}
 
 {% block content %}
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">Carbon Calculator</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#about">Acerca de</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#features">Características</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#start">Empieza Ahora</a></li>
-                </ul>
+<div class="text-center">
+    <h1 class="text-success">Bienvenido a CarbonApp</h1>
+    <p class="lead">Rastrea tu impacto ambiental y toma decisiones más sostenibles.</p>
+    <a href="{% url 'users:signup' %}" class="btn btn-success btn-lg">Empieza Ahora</a>
+</div>
+<div class="row mt-5">
+    <div class="col-md-4">
+        <div class="card shadow-sm">
+            <div class="card-body text-center">
+                <h5 class="card-title text-success">Controla tu Huella</h5>
+                <p class="card-text">Registra tus consumos de electricidad y analiza tu impacto ambiental.</p>
             </div>
         </div>
-    </nav>
-
-    <section class="bg-light text-dark text-center py-5">
-        <div class="container">
-            <h1 class="display-4">Calcula tu Huella de Carbono</h1>
-            <p class="lead">Haz un seguimiento de tu consumo de electricidad y descubre tu impacto ambiental.</p>
-            <a href="#start" class="btn btn-primary btn-lg">Empieza ahora</a>
-        </div>
-    </section>
-
-    <section id="about" class="py-5">
-        <div class="container text-center">
-            <h2>Acerca de</h2>
-            <p class="lead">Nuestra calculadora de huella de carbono te ayuda a estimar tu impacto ambiental analizando tu consumo eléctrico. Reduce tu huella de carbono y contribuye a crear un futuro sostenible.</p>
-        </div>
-    </section>
-
-    <section id="features" class="bg-dark text-light py-5">
-        <div class="container">
-            <div class="row text-center">
-                <h2>Características</h2>
-                <div class="col-md-4">
-                    <div class="p-3">
-                        <h3>Fácil de Usar</h3>
-                        <p>Ingresa los datos de tu consumo y obten resultados instantáneos.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="p-3">
-                        <h3>Cálculos Precisos</h3>
-                        <p>Usamos datos confiables para calcular tu huella de carbono.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="p-3">
-                        <h3>Recomendaciones Personalizadas</h3>
-                        <p>Toma acciones en base a tu consumo y hábitos.</p>
-                    </div>
-                </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card shadow-sm">
+            <div class="card-body text-center">
+                <h5 class="card-title text-success">Panel de Control</h5>
+                <p class="card-text">Revisa estadísticas mensuales y totales de tu consumo.</p>
             </div>
         </div>
-    </section>
-
-    <section id="start" class="py-5">
-        <div class="container text-center">
-            <h2>Empieza ahora</h2>
-            <p class="lead">Regístrate y empieza a crear un futuro sostenible.</p>
-            <a href={% url 'users:signup' %} class="btn btn-success btn-lg">Registrarse</a>
+    </div>
+    <div class="col-md-4">
+        <div class="card shadow-sm">
+            <div class="card-body text-center">
+                <h5 class="card-title text-success">Toma Acción</h5>
+                <p class="card-text">Descubre formas de reducir tu huella de carbono.</p>
+            </div>
         </div>
-    </section>
-{% endblock content %}
+    </div>
+</div>
+{% endblock %}

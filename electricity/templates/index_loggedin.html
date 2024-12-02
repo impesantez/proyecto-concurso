@@ -1,10 +1,48 @@
 {% extends 'base.html' %}
-{% load static %}
 
-{% block title %}Carbon Calculator{% endblock title%}
+{% block title %}Panel de Control{% endblock %}
 
 {% block content %}
-    <div>
-        <p>Logged in</p>
+<h2 class="text-success">Tu Panel de Control</h2>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">Huella de Carbono Mensual</h5>
+                <p class="card-text">{{ total_carbon }} kg CO₂</p>
+            </div>
+        </div>
     </div>
-{% endblock content %}
+    <div class="col-md-6">
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">Consumo Mensual de kWh</h5>
+                <p class="card-text">{{ total_kwh }} kWh</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h3 class="mt-4">Instancias de Uso</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Dispositivo</th>
+            <th>Horas/Día</th>
+            <th>Veces/Mes</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for footprint in footprints %}
+        <tr>
+            <td>{{ footprint.usage }}</td>
+            <td>{{ footprint.daily_hours }}</td>
+            <td>{{ footprint.monthly_times }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<a href="{% url 'electricity:add_usage' %}" class="btn btn-success">Agregar Uso</a>
+{% endblock %}
