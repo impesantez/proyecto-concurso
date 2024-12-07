@@ -76,10 +76,25 @@ WSGI_APPLICATION = 'carbon_calculator.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+# CONFIGURACIÓN PARA SQLITE
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+# CONFIGURACÓN PARA POSTGRES
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'proyecto_integrador',
+        'HOST' : 'localhost',
+        'PORT' : '5432',
+        'USER' : 'postgres',
+        'PASSWORD' : '49508261'
     }
 }
 
